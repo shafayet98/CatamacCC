@@ -1,0 +1,6 @@
+@Catamac.Infrastructure_HostAddress = http://localhost:5255
+
+GET {{Catamac.Infrastructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
