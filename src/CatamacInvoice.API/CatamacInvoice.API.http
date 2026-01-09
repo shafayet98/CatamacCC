@@ -1,0 +1,6 @@
+@CatamacInvoice.API_HostAddress = http://localhost:5236
+
+GET {{CatamacInvoice.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,34 @@
+# ===== Visual Studio / .NET =====
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.log
+
+# Rider / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+secrets.json
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ====== github ======
+.github/
