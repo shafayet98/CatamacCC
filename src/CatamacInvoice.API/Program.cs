@@ -1,7 +1,14 @@
+using Catamac.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<CatamacDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
+// Add services to the container.
 builder.Services.AddControllers();
 
 var app = builder.Build();
