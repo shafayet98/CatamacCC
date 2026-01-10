@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../Catamac.Application/Catamac.Application.csproj" Id="7fd9aa08-8b29-4e24-a422-d405f927f169" />
+  <Project Path="../Catamac.Domain/Catamac.Domain.csproj" Id="fec2b066-367b-4aaa-89cf-88643a8e34f0" />
+  <Project Path="../Catamac.Infrastructure/Catamac.Infrastructure.csproj" Id="8f655e2c-2505-4feb-b50c-2272e5dbd55a" />
   <Project Path="CatamacInvoice.API.csproj" />
 </Solution>
