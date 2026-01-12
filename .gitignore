@@ -26,6 +26,18 @@ appsettings.*.json
 !appsettings.json
 secrets.json
 
+# ===== Client (Vite/React) =====
+client/node_modules/
+client/dist/
+client/.env
+client/.env.*.local
+client/.vite/
+
+# Optional: logs
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
 # ===== OS =====
 .DS_Store
 Thumbs.db
