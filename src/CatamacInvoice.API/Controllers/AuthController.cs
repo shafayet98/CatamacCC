@@ -55,7 +55,7 @@ namespace CatamacInvoice.API.Controllers
         {
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out var userId))
+            if (!int.TryParse(userIdStr, out var userId))
             {
                 return Unauthorized(new { message = "Invalid Token" });
             }
