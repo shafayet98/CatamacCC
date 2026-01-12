@@ -3,6 +3,7 @@ using Catamac.Application.Services;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 
 namespace CatamacInvoice.API.Controllers
@@ -48,5 +49,20 @@ namespace CatamacInvoice.API.Controllers
 
         }
 
+        [Authorize]
+        [HttpGet("me")]
+        public async Task<ActionResult<UserDto>> Me()
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out var userId))
+            {
+                return Unauthorized(new { message = "Invalid Token" });
+            }
+
+            var user = await _authService.MeAsync(userId);
+            return Ok(user);
+
+        }
     }
 }
