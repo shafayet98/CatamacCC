@@ -24,7 +24,7 @@ Check versions:
 ```bash
 node -v
 npm -v
-
+```
 
 ## Getting Started
 ```bash
@@ -37,30 +37,30 @@ http.post("/api/auth/login") → http://localhost:5236/api/auth/login
 ```
 
 ## Project Structure
-client/
-  src/
-    api/
-      http.js              # axios instance (baseURL + token interceptor: automatically attaches the header (token + metadata))
-      authApi.js
-      clientsApi.js
-      productsApi.js
-      invoicesApi.js
-    auth/
-      AuthContext.jsx      # global auth state (login/logout/me)
-      ProtectedRoute.jsx   # route protection
-      authStorage.js       # localStorage helpers - saves/removes the token from localStrorage
-    components/
-      Layout.jsx
-      NavbarApp.jsx
-    pages/
-      LoginPage.jsx
-      RegisterPage.jsx
-      DashboardPage.jsx
-      ClientsPage.jsx
-      ProductsPage.jsx
-      InvoicesPage.jsx
-      InvoiceCreatePage.jsx
-      InvoiceDetailsPage.jsx
+- client/
+    - src/
+        - api/
+            http.js              # axios instance (baseURL + token interceptor: automatically attaches the header (token + metadata))
+            authApi.js
+            clientsApi.js
+            productsApi.js
+            invoicesApi.js
+    - auth/
+        AuthContext.jsx      # global auth state (login/logout/me)
+        ProtectedRoute.jsx   # route protection
+        authStorage.js       # localStorage helpers - saves/removes the token from localStrorage
+    - components/
+        Layout.jsx
+        NavbarApp.jsx
+    - pages/
+        LoginPage.jsx
+        RegisterPage.jsx
+        DashboardPage.jsx
+        ClientsPage.jsx
+        ProductsPage.jsx
+        InvoicesPage.jsx
+        InvoiceCreatePage.jsx
+        InvoiceDetailsPage.jsx
     main.jsx
     App.jsx
 
