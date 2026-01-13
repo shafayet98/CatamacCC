@@ -26,7 +26,7 @@ namespace CatamacInvoice.API.Controllers
         }
 
         [HttpGet("{invoiceId}")]
-        public async Task<ActionResult<InvoiceDetailsDto>> GetById([FromBody] int invoiceId)
+        public async Task<ActionResult<InvoiceDetailsDto>> GetById([FromRoute] int invoiceId)
         {
             try
             {
