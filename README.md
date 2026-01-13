@@ -29,7 +29,12 @@ client/                    -> React frontend (optional)
 docs/                      -> DB diagram / notes
 ```
 
+## ASP .NET RQST Pipeline Flow
+![ASP dot net Request Pipeline](docs/ASP%20dot%20net%20Request%20Pipeline.jpg)
+
+
 ## Database Design (ERD)
+![Catamac DB Design](docs/Catamac%20DB%20Design.png)
 
 #### Core entities:
 - User (Admin)
