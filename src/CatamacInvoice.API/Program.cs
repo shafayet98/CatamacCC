@@ -29,6 +29,15 @@ builder.Services.AddScoped<ClientService>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<InvoiceService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+    );
+});
+
 // Add services to the container.
 builder.Services.AddControllers();
 
@@ -61,7 +70,16 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+// Enable CORS early
+app.UseCors("DevCors");
+
+//app.UseHttpsRedirection();
+
+// Only redirect to HTTPS in production (avoid dev preflight redirect issue)
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthentication();
 
