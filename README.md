@@ -7,6 +7,8 @@ This project is an invoice recording system for Catamac. It allows an admin user
 - Manage Products
 - Create and view Invoices with Line Items (product + quantity + price override)
 
+[Youtube: Catamac Invoice System Walk-through](https://youtu.be/LA80Dc2GNoQ)
+
 ## Tech Stack
 #### Backend
 - ASP.NET Core Web API (.NET 9)
@@ -122,6 +124,11 @@ dotnet ef database update `
 ### 3. Run Backend API
 ```bash
 In Visual Studio: Run CatamacInvoice.API
+```
+### Test Login
+```bash
+Email: testadmin@gmail.com
+Password: testadmin
 ```
 
 #### Thank you!!
