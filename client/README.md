@@ -30,12 +30,15 @@ npm -v
 ```bash
 [Go to Client Folder] 
 cd client
+
 [Install Dependencies] 
 npm install
+
 [Configure Environment Variable] 
 VITE_API_BASE_URL=http://localhost:5236 [This should point to the backend root URL (do not include /api)]
 Example API call becomes:
 http.post("/api/auth/login") → http://localhost:5236/api/auth/login
+
 [Run the dev server] 
 npm run dev
 ```
@@ -45,7 +48,7 @@ npm run dev
 client/
 └── src/
     ├── api/
-    │   ├── http.js              # axios instance (baseURL + token interceptor)
+    │   ├── http.js              # axios instance (baseURL + token interceptor: automatically attaches the header(token + meta data))
     │   ├── authApi.js
     │   ├── clientsApi.js
     │   ├── productsApi.js
@@ -53,7 +56,7 @@ client/
     ├── auth/
     │   ├── AuthContext.jsx      # global auth state (login/logout/me)
     │   ├── ProtectedRoute.jsx   # route protection
-    │   └── authStorage.js       # localStorage helpers (token)
+    │   └── authStorage.js       # localStorage helpers (token) - saves/removes/gets the token from localStrorage
     ├── components/
     │   ├── Layout.jsx
     │   └── NavbarApp.jsx
@@ -81,10 +84,12 @@ client/
 * Protected routes are guarded by ProtectedRoute.
 
 ## Available pages
-Public:
+
+### Public:
 - /login
 - /register
-Protected:
+
+#### Protected:
 - /dashboard
 - /clients
 - /products
