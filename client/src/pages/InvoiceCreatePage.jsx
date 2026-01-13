@@ -118,6 +118,7 @@ export default function InvoiceCreatePage() {
   return (
     <div>
       <h2>Create Invoice</h2>
+      {err ? <div className="alert alert-danger">{err}</div> : null}
 
       <form onSubmit={onSubmit}>
         {/* select client from here */}

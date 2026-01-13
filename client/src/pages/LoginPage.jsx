@@ -53,6 +53,7 @@ export default function LoginPage() {
                                 No Account? <Link to="/register">Register</Link>
                             </div>
                         </form >
+                        {err ? <div className="alert alert-danger mt-2">{err}</div> : null}
                     </div>
                 </div>
             </div>
