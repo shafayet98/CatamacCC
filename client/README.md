@@ -28,41 +28,47 @@ npm -v
 
 ## Getting Started
 ```bash
-[Go to Client Folder] cd client
-[Install Dependencies] npm install
-[Configure Environment Variable] VITE_API_BASE_URL=http://localhost:5236 [This should point to the backend root URL (do not include /api)]
+[Go to Client Folder] 
+cd client
+[Install Dependencies] 
+npm install
+[Configure Environment Variable] 
+VITE_API_BASE_URL=http://localhost:5236 [This should point to the backend root URL (do not include /api)]
 Example API call becomes:
 http.post("/api/auth/login") → http://localhost:5236/api/auth/login
-[Run the dev server] npm run dev
+[Run the dev server] 
+npm run dev
 ```
 
 ## Project Structure
-- client/
-    - src/
-        - api/
-            http.js              # axios instance (baseURL + token interceptor: automatically attaches the header (token + metadata))
-            authApi.js
-            clientsApi.js
-            productsApi.js
-            invoicesApi.js
-    - auth/
-        AuthContext.jsx      # global auth state (login/logout/me)
-        ProtectedRoute.jsx   # route protection
-        authStorage.js       # localStorage helpers - saves/removes the token from localStrorage
-    - components/
-        Layout.jsx
-        NavbarApp.jsx
-    - pages/
-        LoginPage.jsx
-        RegisterPage.jsx
-        DashboardPage.jsx
-        ClientsPage.jsx
-        ProductsPage.jsx
-        InvoicesPage.jsx
-        InvoiceCreatePage.jsx
-        InvoiceDetailsPage.jsx
-    main.jsx
-    App.jsx
+```text
+client/
+└── src/
+    ├── api/
+    │   ├── http.js              # axios instance (baseURL + token interceptor)
+    │   ├── authApi.js
+    │   ├── clientsApi.js
+    │   ├── productsApi.js
+    │   └── invoicesApi.js
+    ├── auth/
+    │   ├── AuthContext.jsx      # global auth state (login/logout/me)
+    │   ├── ProtectedRoute.jsx   # route protection
+    │   └── authStorage.js       # localStorage helpers (token)
+    ├── components/
+    │   ├── Layout.jsx
+    │   └── NavbarApp.jsx
+    ├── pages/
+    │   ├── LoginPage.jsx
+    │   ├── RegisterPage.jsx
+    │   ├── DashboardPage.jsx
+    │   ├── ClientsPage.jsx
+    │   ├── ProductsPage.jsx
+    │   ├── InvoicesPage.jsx
+    │   ├── InvoiceCreatePage.jsx
+    │   └── InvoiceDetailsPage.jsx
+    ├── main.jsx
+    └── App.jsx
+```
 
 ## Authentication Flow
 * Login/Register returns an AuthResponse containing:
