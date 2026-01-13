@@ -119,7 +119,9 @@ dotnet ef database update `
   --project .\src\Catamac.Infrastructure\Catamac.Infrastructure.csproj `
   --startup-project .\src\CatamacInvoice.API\CatamacInvoice.API.csproj
 ```
-### 2. Run Backend API
+### 3. Run Backend API
 ```bash
 In Visual Studio: Run CatamacInvoice.API
 ```
+
+#### Thank you!!
