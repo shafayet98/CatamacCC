@@ -32,27 +32,35 @@ export default function RegisterPage() {
 
     return (
         <>
-            <h1>Register Page</h1>
-            <form onSubmit={onSubmit} action="">
+            <div className="container">
+                <h1 className="text-center">Catamac: Register Page</h1>
 
-                <label> Username </label>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                <div className="row justify-content-center mt-5">
+                    <div className="col-12 col-sm-10 col-md-6 col-lg-4">
+                        <form className="d-flex flex-column gap-3" onSubmit={onSubmit} action="">
 
-                <label> Email </label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                            <label> Username </label>
+                            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
 
-                <label> Password </label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                            <label> Email </label>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
-                <button className="btn btn-warning" disabled={loading}>
-                    {loading ? "Creating..." : "Register As Admin"}
-                </button>
+                            <label> Password </label>
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-                <div className="">
-                    Already have an Account? <Link to="/login">Login</Link>
+                            <button className="btn btn-outline-dark" disabled={loading}>
+                                {loading ? "Creating..." : "Register As Admin"}
+                            </button>
+
+                            <div className="">
+                                Already have an Account? <Link to="/login">Login</Link>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
+            </div>
 
-            </form>
         </>
     )
 }

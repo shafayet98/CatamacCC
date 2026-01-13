@@ -78,9 +78,15 @@ export default function InvoiceDetailsPage() {
                       <div className="fw-semibold">${lineTotal.toFixed(2)}</div>
                     </div>
                   </div>
+
+
                 </div>
               );
             })}
+
+            <div className="alert alert-warning text-end">
+              Total Amount: <b>${Number(data.totalAmount).toFixed(2)}</b>
+            </div>
           </div>
         )}
       </div>

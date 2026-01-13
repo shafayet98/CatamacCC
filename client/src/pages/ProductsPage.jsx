@@ -43,10 +43,10 @@ export default function ProductsPage() {
 
   return(
     <div className="">
-      <h2 className="mb-3">Products Page</h2>
+      <h2 className="text-center mb-3">Products Page</h2>
 
-      <h2>Create Product</h2>
-      <form onSubmit={onCreate} action="">
+      <h2 className="text-decoration-underline">Create Product</h2>
+      <form className="d-flex flex-column gap-2 mt-3 w-50" onSubmit={onCreate} action="">
 
 
         <label> Product Name </label>
@@ -58,18 +58,18 @@ export default function ProductsPage() {
         <label> Product Unit Price </label>
         <input type="number" value={unitPrice} onChange={(e) => setUnitPrice(e.target.value)} required />
 
-        <button className="btn btn-primary">Create</button>
+        <button className="btn btn-warning fw-bold">Create A Product</button>
 
       </form>
 
-      <div className="all-products">
-        <h3>All Products</h3>
+      <div className="all-products mt-5">
+        <h3 className="text-decoration-underline">All Products</h3>
         {loading ?
           (
             <div>Loading Products...</div>
           ) :
           (
-            <table>
+            <table className="w-100 table-bordered">
               <thead>
                 <tr>
                   <th>ID</th>

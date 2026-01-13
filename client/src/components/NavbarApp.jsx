@@ -15,7 +15,7 @@ export default function NavbarApp() {
 
     return (
 
-        <nav className="navbar navbar-expland-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 
             <div className="container">
                 <Link className="navbar-brand" to="/dashboard"> Catamac</Link>

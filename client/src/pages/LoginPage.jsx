@@ -13,18 +13,18 @@ export default function LoginPage() {
     const [loading, setLoading] = useState(false);
 
 
-    async function onSubmit(e){
+    async function onSubmit(e) {
         e.preventDefault();
         setErr("");
         setLoading(true);
 
-        try{
+        try {
             const data = await loginApi({ email, password });
             login(data);
             nav("/dashboard");
-        }catch(ex){
+        } catch (ex) {
             setErr(ex.response.data.message || "Login Failed");
-        }finally{
+        } finally {
             setLoading(false);
         }
     }
@@ -32,23 +32,31 @@ export default function LoginPage() {
 
     return (
         <>
-            <h1>Login Page</h1>
-            <form onSubmit={onSubmit} action="">
-                <label> Email </label>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
 
-                <label> Password </label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            <div className="container">
+                <h1 className="text-center">Catamac: Login Page</h1>
 
-                <button disabled={loading}>
-                    {loading ? "Please wait, logging in." : "Login"}
-                </button>
+                <div className="row justify-content-center mt-5">
+                    <div className="col-12 col-sm-10 col-md-6 col-lg-4">
+                        <form className="d-flex flex-column gap-3" onSubmit={onSubmit} action="">
+                            <label> Email </label>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
-                <div className="">
-                    No Account? <Link to="/register">Register</Link>
+                            <label> Password </label>
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+
+                            <button className="btn btn-outline-dark" disabled={loading}>
+                                {loading ? "Please wait, logging in." : "Login"}
+                            </button>
+
+                            <div className="">
+                                No Account? <Link to="/register">Register</Link>
+                            </div>
+                        </form >
+                    </div>
                 </div>
+            </div>
 
-            </form>
         </>
     )
 }

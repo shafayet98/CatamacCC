@@ -42,10 +42,10 @@ export default function ClientsPage() {
 
   return (
     <div className="">
-      <h2 className="mb-3">Clients Page</h2>
+      <h2 className="text-center">Clients Page</h2>
 
-      <h2>Create Client</h2>
-      <form onSubmit={onCreate} action="">
+      <h2 className="text-decoration-underline">Create Client</h2>
+      <form className="d-flex flex-column gap-2 mt-3 w-50" onSubmit={onCreate} action="">
 
 
         <label> Client Name </label>
@@ -57,18 +57,18 @@ export default function ClientsPage() {
         <label> Client Phone Number </label>
         <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required />
 
-        <button className="btn btn-primary">Create</button>
+        <button className="btn btn-warning fw-bold">Create A Client</button>
 
       </form>
 
-      <div className="all-clients">
-        <h3>All Clients</h3>
+      <div className="all-clients mt-5">
+        <h3 className="text-decoration-underline">All Clients</h3>
         {loading ?
           (
             <div>Loading CLients...</div>
           ) :
           (
-            <table>
+            <table className="w-100 table-bordered">
               <thead>
                 <tr>
                   <th>ID</th>

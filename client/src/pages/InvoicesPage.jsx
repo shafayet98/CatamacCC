@@ -27,37 +27,34 @@ export default function InvoicesPage() {
 
   return (
     <div>
-      <h3>All Invoices</h3>
-      <Link to="/invoices/new">Create New Invoices</Link>
+      <h3 className="text-decoration-underline">All Invoices</h3>
+      <Link className="create-invoice-link" to="/invoices/new">Create New Invoices</Link>
 
 
       {err ? <div className="alert alert-danger">{err}</div> : null}
 
 
-      <div className="card">
+      <div className="mt-4">
         {loading ? (
           <div>
             <div>Loading...</div>
           </div>
         ) : (
           <div>
-            <ul>
-              {invoices.map((inv) => (
-                <div key={inv.id}>
-                  <li>{inv.id}</li>
-                  <li>{inv.invoiceCode}</li>
-                  <li>{inv.clientId}</li>
-                  <li>{new Date(inv.invoiceDate).toLocaleDateString()}</li>
-                  <li>{Number(inv.totalAmount)}</li>
-                  <li>
-                    <Link to={`/invoices/${inv.id}`}>View Details</Link>
-                  </li>
-                  <br />
+            {invoices.map((inv) => (
+              <div className="card mb-2 w-50" key={inv.id}>
+                <div className="card-body">
+                  <h5 className="card-title">Invoice Code: {inv.invoiceCode}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">Date: {new Date(inv.invoiceDate).toLocaleDateString()}</h6>
+                  <p>Client ID: {inv.clientId}</p>
+                  <p className="fw-bold fs-20">Total Order Amount: {Number(inv.totalAmount)}</p>
+                  <Link className="card-link" to={`/invoices/${inv.id}`}>Invoice Details</Link>
                 </div>
-              ))}
-            </ul>
+                <br />
+              </div>
+            ))}
           </div>
-          )
+        )
         }
       </div>
     </div>
