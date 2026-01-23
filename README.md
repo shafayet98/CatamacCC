@@ -1,7 +1,7 @@
-## Catamac Invoice System
+## Invoice System
 #### Overview
 
-This project is an invoice recording system for Catamac. It allows an admin user to:
+This project is an invoice recording system. It allows an admin user to:
 - Register/Login and receive a JWT token
 - Manage Clients
 - Manage Products
