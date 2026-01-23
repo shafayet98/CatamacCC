@@ -1,6 +1,6 @@
-# Catamac Invoice System: Frontend (React + Vite + Bootstrap)
+# Invoice System: Frontend (React + Vite + Bootstrap)
 
-This folder contains the **frontend** for the Catamac system.  
+This folder contains the **frontend** for the Invoice system.  
 It is a **React (JavaScript) + Vite** app using **Bootstrap** for styling, and it talks to the .NET backend via REST APIs.
 
 ---
